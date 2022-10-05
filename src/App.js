@@ -23,13 +23,6 @@ class App extends Component {
       document.title = "TsourdiSwap"
     }
 
-  async connectAccount(web3) {
-
-    const accounts = await this.state.web3.eth.getAccounts()
-    this.setState ({account: accounts[0]})
-    const ethBalance = await this.state.web3.eth.getBalance(this.state.account)
-    this.setState({ethBalance: ethBalance})
-  }
 
   async loadWeb3 () {
     if(window.ethereum) {
@@ -40,7 +33,7 @@ class App extends Component {
       window.web3 = new Web3(window.web3.currentProvider)
     }
     else {
-      window.alert('blabla')
+      window.alert('')
     }
   }
 
